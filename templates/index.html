@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Personal Loan Simulator</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='bank.ico') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&Noto+Serif+JP:wght@500&family=Old+Standard+TT:wght@700&family=Tajawal&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <!-- Website Title -->
+    	<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Personal Loan Simulator</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
+    		</div>
+    	</div>
+
+        <!-- Text Area -->
+    	<div class="ml-container">
+    		<form action="{{ url_for('predict') }}" method="POST">              
+                <div class="questions">1. How much do you need to borrow ?</div>
+                <input class="form-input" name="Principal" type="number" placeholder="eg. 500 (max. 1000)" required>
+
+                <div class="questions">2. How long is the term of the loan in days ?</div>
+                <input class="form-input" name="Terms" type="number" placeholder="eg. 7 (max. 30)" required>
+
+                <div class="questions">3. What is the effective date ?</div>
+                <input class="form-input" type='date' name="Effective_date" required>
+
+                <div class="questions">4. How old are you ?</div>
+                <input class="form-input" name="Age" placeholder="eg. 32 (min. 18)" required="required">
+
+                <div class="questions">5. What is your level of education ?</div>
+                <select name="Education_level" class="form-select" required>
+                    <option value="Bachelor">Bachelor</option>
+                    <option value="HSBelow">High school or Below</option>
+                    <option value="College">College</option>
+                </select>
+
+                <div class="questions">6. What is your gender ?</div>
+                <input type="radio" id="genderChoice1" name="Gender" value="Male">
+                <label for="contactChoice1">Male</label>
+                <input type="radio" id="genderChoice2" name="Gender" value="Female">
+                <label for="contactChoice2">Female</label>
+
+                <br><br>
+                <input type="submit" class="my-cta-button" value="Launch simulation">
+                <br>
+        	</form>
+            <div class="rejected"> {{ incorrect_fields }} </div>
+    	</div>
+
+        <!-- Footer -->
+       <div class='footer'>
+           <div class="contact">
+               <a target="_blank" href="https://github.com/AyedS/Loan-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
+           </div>
+           <p class='footer-description'>Made with ❤️ by Samy Ayed.</p>
+       </div>
+
+    </body>
+</html>
