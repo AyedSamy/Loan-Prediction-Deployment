@@ -74,4 +74,4 @@ rope==0.18.0
 scikit-learn==0.24.0
 scipy>=0.15.1
 seaborn==0.11.1
-sklearn>=0.18
+sklearn==0.0
