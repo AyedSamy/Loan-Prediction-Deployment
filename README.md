@@ -6,7 +6,7 @@ The dataset we use contains details of **346 customers** whose loan are already 
 
 | **Field** | **Description** |
 |-------|-------------|
-|**Loan status**|*Whether a loan is paid off on in collection*|
+|**Loan status**|*Whether a loan is paid off or in collection*|
 |**Principal**|*Basic principal loan amount*|
 |**Terms**|*Origination terms which can be weekly (7 days), biweekly, and monthly payoff schedule*|
 |**Effective date**|*When the loan got originated and took effects*|
